@@ -1,0 +1,14 @@
+# Local config and secrets (never commit)
+config.json
+**/local.settings.json
+.env
+
+# Python / build artifacts
+__pycache__/
+*.pyc
+**/.python_packages/
+.venv/
+venv/
+bin/
+obj/
+*.zip

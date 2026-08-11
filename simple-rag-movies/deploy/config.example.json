@@ -1,0 +1,36 @@
+{
+  "_README": "Copy this file to 'config.json' and edit the values. Do NOT put the MongoDB connection string here (it contains a password). Instead, set it in the terminal before running: $env:MDB_MCP_CONNECTION_STRING = 'mongodb+srv://user:pass@cluster.../'. Leave subscriptionId empty to use your current 'az account' subscription.",
+
+  "_promptNote": "azure-deploy only asks for tenant, subscription, resource group, and region. Everything else in this file is applied silently and reported as the run starts, so edit it here to change it.",
+
+  "subscriptionId": "",
+  "_subscriptionNote": "Leave blank to use (and display) your current 'az account' subscription by name. Set a subscription name or id to override.",
+
+  "tenantId": "",
+  "_tenantNote": "Leave blank to use your current 'az login' tenant. Set a tenant id to target a different directory (the script runs 'az login --tenant' if it differs).",
+
+  "resourceGroup": "mongodb-agent-rg",
+  "location": "eastus2",
+
+  "_locationNote": "location MUST match your MongoDB Atlas cluster region for lowest latency (the MCP server queries Mongo on every request).",
+
+  "namePrefix": "mongorag",
+  "_namePrefixNote": "Globally-unique resource names (Foundry account, Function App) are built as '<namePrefix>-<role>-<hash>'. The hash is derived from your subscription+resource group so re-runs are stable.",
+
+  "embeddingModel": "text-embedding-ada-002",
+  "embeddingModelVersion": "2",
+  "embeddingCapacity": 30,
+
+  "mcpContainerAppName": "mongo-mcp-server",
+  "mcpImage": "mongodb/mongodb-mcp-server:latest",
+  "mcpReadOnly": true,
+
+  "chatModel": "gpt-5-mini",
+  "_chatModelNote": "Model deployed for the agent. Must be a model that supports MCP tools; the gpt-5 family does, and cannot use OpenAPI tools.",
+
+  "foundryProjectName": "",
+  "agentName": "",
+  "_agentNote": "Leave blank for the defaults: '<namePrefix>-project' and 'mongodb-search-agent'.",
+
+  "runSmokeTest": true
+}

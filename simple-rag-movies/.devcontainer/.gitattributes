@@ -1,0 +1,2 @@
+# Keep shell scripts LF so they run in the Linux dev container even when edited on Windows.
+*.sh text eol=lf

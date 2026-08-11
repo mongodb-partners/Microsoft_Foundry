@@ -1,0 +1,29 @@
+// Dev container for simple-rag-movies. Gives you a cloud dev box (GitHub Codespaces or local
+// VS Code Dev Containers) with the whole toolchain preinstalled - Azure CLI, PowerShell 7, Python,
+// Bicep, and the MongoDB Atlas CLI - so you install nothing locally. PowerShell is the default
+// terminal so ./scripts/setup-and-deploy.ps1 runs both steps in a single process and the MongoDB
+// connection string flows between them.
+{
+    "name": "simple-rag-movies (MongoDB + Azure AI Foundry)",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/features/azure-cli:1": {},
+        "ghcr.io/devcontainers/features/powershell:1": {},
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.11"
+        }
+    },
+    "postCreateCommand": "bash .devcontainer/post-create.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "pwsh"
+            },
+            "extensions": [
+                "ms-vscode.powershell",
+                "ms-python.python",
+                "ms-azuretools.vscode-bicep"
+            ]
+        }
+    }
+}

@@ -1,0 +1,100 @@
+# ============================================
+# Secrets & Environment Files - NEVER COMMIT
+# ============================================
+.env
+.env.*
+*.env
+!.env.example
+!.env.template
+
+# Azure Functions local settings (contains API keys/connection strings)
+local.settings.json
+
+# Configuration files with secrets
+secrets.json
+*.secrets
+credentials.json
+*-credentials.json
+service-account*.json
+
+# Certificates & Keys
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.cer
+
+# Azure deployment artifacts that may contain secrets
+*.publishsettings
+azure.yaml.local
+
+# ============================================
+# OS Generated Files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+.python-version
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ============================================
+# Node.js (if used in future samples)
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================
+# Editors & IDEs
+# ============================================
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================
+# Azure & Deployment Artifacts
+# ============================================
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+.azure/
+*.zip
+*.tar.gz
+
+# ============================================
+# Logs & Temp Files
+# ============================================
+*.log
+logs/
+tmp/
+temp/
